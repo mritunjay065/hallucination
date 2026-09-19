@@ -19,7 +19,7 @@
       "Macro F1": "100.0%",
       "Fatal Catch Rate": "100.0%",
       "False Negative Rate": "0.0%",
-      "Mean Safe Conf": "85.31%",
+      "Mean Safe Conf": "85.47%",
       "Mean Blocked Conf": "15.0%"
     },
     {
@@ -28,8 +28,8 @@
       "Macro F1": "100.0%",
       "Fatal Catch Rate": "100.0%",
       "False Negative Rate": "0.0%",
-      "Mean Safe Conf": "84.82%",
-      "Mean Blocked Conf": "14.81%"
+      "Mean Safe Conf": "84.66%",
+      "Mean Blocked Conf": "14.64%"
     },
     {
       "Evaluation Scale": "25 Cases",
@@ -37,8 +37,8 @@
       "Macro F1": "77.25%",
       "Fatal Catch Rate": "90.0%",
       "False Negative Rate": "0.0%",
-      "Mean Safe Conf": "86.27%",
-      "Mean Blocked Conf": "24.18%"
+      "Mean Safe Conf": "86.32%",
+      "Mean Blocked Conf": "25.17%"
     },
     {
       "Evaluation Scale": "50 Cases",
@@ -46,8 +46,8 @@
       "Macro F1": "77.25%",
       "Fatal Catch Rate": "90.0%",
       "False Negative Rate": "0.0%",
-      "Mean Safe Conf": "86.27%",
-      "Mean Blocked Conf": "24.18%"
+      "Mean Safe Conf": "86.32%",
+      "Mean Blocked Conf": "25.17%"
     },
     {
       "Evaluation Scale": "100 Cases",
@@ -55,8 +55,8 @@
       "Macro F1": "77.25%",
       "Fatal Catch Rate": "90.0%",
       "False Negative Rate": "0.0%",
-      "Mean Safe Conf": "86.27%",
-      "Mean Blocked Conf": "24.18%"
+      "Mean Safe Conf": "86.32%",
+      "Mean Blocked Conf": "25.17%"
     }
   ],
   "scale_evaluations": {
@@ -69,7 +69,7 @@
       "macro_f1_pct": 100.0,
       "fatal_hallucination_catch_rate_pct": 100.0,
       "false_negative_fatal_rate_pct": 0.0,
-      "mean_safe_confidence_pct": 85.31,
+      "mean_safe_confidence_pct": 85.47,
       "mean_blocked_confidence_pct": 15.0,
       "confusion_matrix": {
         "VERIFIED_SAFE": {
@@ -94,14 +94,14 @@
           "recall_pct": 100.0,
           "f1_score_pct": 100.0,
           "support": 2,
-          "mean_confidence_pct": 85.31
+          "mean_confidence_pct": 85.47
         },
         "CLINICAL_WARNING": {
           "precision_pct": 100.0,
           "recall_pct": 100.0,
           "f1_score_pct": 100.0,
           "support": 1,
-          "mean_confidence_pct": 43.84
+          "mean_confidence_pct": 43.31
         },
         "BLOCKED": {
           "precision_pct": 100.0,
@@ -117,10 +117,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7678,
+          "confidence": 0.7738,
           "match": true,
           "entailment_score": 0.862,
-          "evidence_score": 0.6777,
+          "evidence_score": 0.6952,
           "consistency_score": 0.1666
         },
         {
@@ -131,7 +131,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.3455,
+          "evidence_score": 0.3242,
           "consistency_score": 0.1841
         },
         {
@@ -139,10 +139,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9383,
+          "confidence": 0.9356,
           "match": true,
           "entailment_score": 1.0,
-          "evidence_score": 0.901,
+          "evidence_score": 0.8932,
           "consistency_score": 0.2281
         },
         {
@@ -153,7 +153,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.7503,
+          "evidence_score": 0.7686,
           "consistency_score": 0.16
         },
         {
@@ -161,10 +161,10 @@
           "domain": "Cardiology",
           "expected": "CLINICAL_WARNING",
           "predicted": "CLINICAL_WARNING",
-          "confidence": 0.4384,
+          "confidence": 0.4331,
           "match": true,
           "entailment_score": 0.563,
-          "evidence_score": 0.4823,
+          "evidence_score": 0.4672,
           "consistency_score": 0.081
         }
       ]
@@ -178,8 +178,8 @@
       "macro_f1_pct": 100.0,
       "fatal_hallucination_catch_rate_pct": 100.0,
       "false_negative_fatal_rate_pct": 0.0,
-      "mean_safe_confidence_pct": 84.82,
-      "mean_blocked_confidence_pct": 14.81,
+      "mean_safe_confidence_pct": 84.66,
+      "mean_blocked_confidence_pct": 14.64,
       "confusion_matrix": {
         "VERIFIED_SAFE": {
           "VERIFIED_SAFE": 4,
@@ -203,21 +203,21 @@
           "recall_pct": 100.0,
           "f1_score_pct": 100.0,
           "support": 4,
-          "mean_confidence_pct": 84.82
+          "mean_confidence_pct": 84.66
         },
         "CLINICAL_WARNING": {
           "precision_pct": 100.0,
           "recall_pct": 100.0,
           "f1_score_pct": 100.0,
           "support": 1,
-          "mean_confidence_pct": 43.84
+          "mean_confidence_pct": 43.31
         },
         "BLOCKED": {
           "precision_pct": 100.0,
           "recall_pct": 100.0,
           "f1_score_pct": 100.0,
           "support": 5,
-          "mean_confidence_pct": 14.81
+          "mean_confidence_pct": 14.64
         }
       },
       "case_samples": [
@@ -226,10 +226,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7678,
+          "confidence": 0.7738,
           "match": true,
           "entailment_score": 0.862,
-          "evidence_score": 0.6777,
+          "evidence_score": 0.6952,
           "consistency_score": 0.1666
         },
         {
@@ -240,7 +240,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.3455,
+          "evidence_score": 0.3242,
           "consistency_score": 0.1841
         },
         {
@@ -248,10 +248,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9383,
+          "confidence": 0.9356,
           "match": true,
           "entailment_score": 1.0,
-          "evidence_score": 0.901,
+          "evidence_score": 0.8932,
           "consistency_score": 0.2281
         },
         {
@@ -262,7 +262,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.7503,
+          "evidence_score": 0.7686,
           "consistency_score": 0.16
         },
         {
@@ -270,10 +270,10 @@
           "domain": "Cardiology",
           "expected": "CLINICAL_WARNING",
           "predicted": "CLINICAL_WARNING",
-          "confidence": 0.4384,
+          "confidence": 0.4331,
           "match": true,
           "entailment_score": 0.563,
-          "evidence_score": 0.4823,
+          "evidence_score": 0.4672,
           "consistency_score": 0.081
         },
         {
@@ -281,10 +281,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8585,
+          "confidence": 0.8446,
           "match": true,
           "entailment_score": 0.88,
-          "evidence_score": 0.8751,
+          "evidence_score": 0.835,
           "consistency_score": 0.2197
         },
         {
@@ -292,10 +292,10 @@
           "domain": "Cardiology",
           "expected": "BLOCKED",
           "predicted": "BLOCKED",
-          "confidence": 0.1406,
+          "confidence": 0.132,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.3254,
+          "evidence_score": 0.3006,
           "consistency_score": 0.1338
         },
         {
@@ -306,7 +306,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.15,
-          "evidence_score": 0.4305,
+          "evidence_score": 0.4351,
           "consistency_score": 0.2111
         },
         {
@@ -314,10 +314,10 @@
           "domain": "Nephrology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.828,
+          "confidence": 0.8325,
           "match": true,
           "entailment_score": 0.914,
-          "evidence_score": 0.7872,
+          "evidence_score": 0.8005,
           "consistency_score": 0.134
         },
         {
@@ -328,7 +328,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.4348,
+          "evidence_score": 0.4488,
           "consistency_score": 0.0814
         }
       ]
@@ -342,8 +342,8 @@
       "macro_f1_pct": 77.25,
       "fatal_hallucination_catch_rate_pct": 90.0,
       "false_negative_fatal_rate_pct": 10.0,
-      "mean_safe_confidence_pct": 86.27,
-      "mean_blocked_confidence_pct": 24.18,
+      "mean_safe_confidence_pct": 86.32,
+      "mean_blocked_confidence_pct": 25.17,
       "confusion_matrix": {
         "VERIFIED_SAFE": {
           "VERIFIED_SAFE": 13,
@@ -367,21 +367,21 @@
           "recall_pct": 100.0,
           "f1_score_pct": 92.86,
           "support": 13,
-          "mean_confidence_pct": 86.27
+          "mean_confidence_pct": 86.32
         },
         "CLINICAL_WARNING": {
           "precision_pct": 50.0,
           "recall_pct": 50.0,
           "f1_score_pct": 50.0,
           "support": 2,
-          "mean_confidence_pct": 62.64
+          "mean_confidence_pct": 61.38
         },
         "BLOCKED": {
           "precision_pct": 100.0,
           "recall_pct": 80.0,
           "f1_score_pct": 88.89,
           "support": 10,
-          "mean_confidence_pct": 24.18
+          "mean_confidence_pct": 25.17
         }
       },
       "case_samples": [
@@ -390,10 +390,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7678,
+          "confidence": 0.7738,
           "match": true,
           "entailment_score": 0.862,
-          "evidence_score": 0.6777,
+          "evidence_score": 0.6952,
           "consistency_score": 0.1666
         },
         {
@@ -404,7 +404,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.3455,
+          "evidence_score": 0.3242,
           "consistency_score": 0.1841
         },
         {
@@ -412,10 +412,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9383,
+          "confidence": 0.9356,
           "match": true,
           "entailment_score": 1.0,
-          "evidence_score": 0.901,
+          "evidence_score": 0.8932,
           "consistency_score": 0.2281
         },
         {
@@ -426,7 +426,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.7503,
+          "evidence_score": 0.7686,
           "consistency_score": 0.16
         },
         {
@@ -434,10 +434,10 @@
           "domain": "Cardiology",
           "expected": "CLINICAL_WARNING",
           "predicted": "CLINICAL_WARNING",
-          "confidence": 0.4384,
+          "confidence": 0.4331,
           "match": true,
           "entailment_score": 0.563,
-          "evidence_score": 0.4823,
+          "evidence_score": 0.4672,
           "consistency_score": 0.081
         },
         {
@@ -445,10 +445,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8585,
+          "confidence": 0.8446,
           "match": true,
           "entailment_score": 0.88,
-          "evidence_score": 0.8751,
+          "evidence_score": 0.835,
           "consistency_score": 0.2197
         },
         {
@@ -456,10 +456,10 @@
           "domain": "Cardiology",
           "expected": "BLOCKED",
           "predicted": "BLOCKED",
-          "confidence": 0.1406,
+          "confidence": 0.132,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.3254,
+          "evidence_score": 0.3006,
           "consistency_score": 0.1338
         },
         {
@@ -470,7 +470,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.15,
-          "evidence_score": 0.4305,
+          "evidence_score": 0.4351,
           "consistency_score": 0.2111
         },
         {
@@ -478,10 +478,10 @@
           "domain": "Nephrology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.828,
+          "confidence": 0.8325,
           "match": true,
           "entailment_score": 0.914,
-          "evidence_score": 0.7872,
+          "evidence_score": 0.8005,
           "consistency_score": 0.134
         },
         {
@@ -492,7 +492,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.4348,
+          "evidence_score": 0.4488,
           "consistency_score": 0.0814
         },
         {
@@ -500,10 +500,10 @@
           "domain": "Nephrology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9007,
+          "confidence": 0.9061,
           "match": true,
           "entailment_score": 0.975,
-          "evidence_score": 0.8653,
+          "evidence_score": 0.8812,
           "consistency_score": 0.1804
         },
         {
@@ -511,10 +511,10 @@
           "domain": "Neurology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7503,
+          "confidence": 0.7509,
           "match": true,
           "entailment_score": 0.836,
-          "evidence_score": 0.6579,
+          "evidence_score": 0.6597,
           "consistency_score": 0.1854
         },
         {
@@ -525,7 +525,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.6524,
+          "evidence_score": 0.6542,
           "consistency_score": 0.0875
         },
         {
@@ -533,10 +533,10 @@
           "domain": "Neurology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9096,
+          "confidence": 0.9118,
           "match": true,
           "entailment_score": 0.94,
-          "evidence_score": 0.9436,
+          "evidence_score": 0.95,
           "consistency_score": 0.1892
         },
         {
@@ -547,7 +547,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.5914,
+          "evidence_score": 0.5711,
           "consistency_score": 0.3022
         },
         {
@@ -555,10 +555,10 @@
           "domain": "Endocrinology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7442,
+          "confidence": 0.7495,
           "match": true,
           "entailment_score": 0.86,
-          "evidence_score": 0.5744,
+          "evidence_score": 0.5898,
           "consistency_score": 0.224
         },
         {
@@ -566,10 +566,10 @@
           "domain": "Endocrinology",
           "expected": "BLOCKED",
           "predicted": "CLINICAL_WARNING",
-          "confidence": 0.4186,
+          "confidence": 0.4198,
           "match": false,
           "entailment_score": 0.567,
-          "evidence_score": 0.3608,
+          "evidence_score": 0.3643,
           "consistency_score": 0.186
         },
         {
@@ -577,10 +577,10 @@
           "domain": "Endocrinology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8593,
+          "confidence": 0.8577,
           "match": true,
           "entailment_score": 0.908,
-          "evidence_score": 0.8858,
+          "evidence_score": 0.8813,
           "consistency_score": 0.1372
         },
         {
@@ -588,10 +588,10 @@
           "domain": "Infectious Disease",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8543,
+          "confidence": 0.8557,
           "match": true,
           "entailment_score": 0.867,
-          "evidence_score": 0.8025,
+          "evidence_score": 0.8065,
           "consistency_score": 0.343
         },
         {
@@ -599,10 +599,10 @@
           "domain": "Infectious Disease",
           "expected": "BLOCKED",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7535,
+          "confidence": 0.7533,
           "match": false,
           "entailment_score": 0.758,
-          "evidence_score": 0.8438,
+          "evidence_score": 0.8429,
           "consistency_score": 0.1156
         },
         {
@@ -621,10 +621,10 @@
           "domain": "Pharmacology",
           "expected": "BLOCKED",
           "predicted": "BLOCKED",
-          "confidence": 0.205,
+          "confidence": 0.3118,
           "match": true,
           "entailment_score": 0.3,
-          "evidence_score": 0.154,
+          "evidence_score": 0.4592,
           "consistency_score": 0.0804
         },
         {
@@ -632,10 +632,10 @@
           "domain": "Toxicology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8653,
+          "confidence": 0.8638,
           "match": true,
           "entailment_score": 0.885,
-          "evidence_score": 1.0,
+          "evidence_score": 0.9958,
           "consistency_score": 0.0496
         },
         {
@@ -643,10 +643,10 @@
           "domain": "Immunology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9535,
+          "confidence": 0.9549,
           "match": true,
           "entailment_score": 0.98,
-          "evidence_score": 0.9841,
+          "evidence_score": 0.9883,
           "consistency_score": 0.2195
         },
         {
@@ -654,10 +654,10 @@
           "domain": "Oncology",
           "expected": "CLINICAL_WARNING",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8145,
+          "confidence": 0.7944,
           "match": false,
           "entailment_score": 0.865,
-          "evidence_score": 0.8061,
+          "evidence_score": 0.7477,
           "consistency_score": 0.1698
         }
       ]
@@ -671,8 +671,8 @@
       "macro_f1_pct": 77.25,
       "fatal_hallucination_catch_rate_pct": 90.0,
       "false_negative_fatal_rate_pct": 10.0,
-      "mean_safe_confidence_pct": 86.27,
-      "mean_blocked_confidence_pct": 24.18,
+      "mean_safe_confidence_pct": 86.32,
+      "mean_blocked_confidence_pct": 25.17,
       "confusion_matrix": {
         "VERIFIED_SAFE": {
           "VERIFIED_SAFE": 26,
@@ -696,21 +696,21 @@
           "recall_pct": 100.0,
           "f1_score_pct": 92.86,
           "support": 26,
-          "mean_confidence_pct": 86.27
+          "mean_confidence_pct": 86.32
         },
         "CLINICAL_WARNING": {
           "precision_pct": 50.0,
           "recall_pct": 50.0,
           "f1_score_pct": 50.0,
           "support": 4,
-          "mean_confidence_pct": 62.64
+          "mean_confidence_pct": 61.38
         },
         "BLOCKED": {
           "precision_pct": 100.0,
           "recall_pct": 80.0,
           "f1_score_pct": 88.89,
           "support": 20,
-          "mean_confidence_pct": 24.18
+          "mean_confidence_pct": 25.17
         }
       },
       "case_samples": [
@@ -719,10 +719,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7678,
+          "confidence": 0.7738,
           "match": true,
           "entailment_score": 0.862,
-          "evidence_score": 0.6777,
+          "evidence_score": 0.6952,
           "consistency_score": 0.1666
         },
         {
@@ -733,7 +733,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.3455,
+          "evidence_score": 0.3242,
           "consistency_score": 0.1841
         },
         {
@@ -741,10 +741,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9383,
+          "confidence": 0.9356,
           "match": true,
           "entailment_score": 1.0,
-          "evidence_score": 0.901,
+          "evidence_score": 0.8932,
           "consistency_score": 0.2281
         },
         {
@@ -755,7 +755,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.7503,
+          "evidence_score": 0.7686,
           "consistency_score": 0.16
         },
         {
@@ -763,10 +763,10 @@
           "domain": "Cardiology",
           "expected": "CLINICAL_WARNING",
           "predicted": "CLINICAL_WARNING",
-          "confidence": 0.4384,
+          "confidence": 0.4331,
           "match": true,
           "entailment_score": 0.563,
-          "evidence_score": 0.4823,
+          "evidence_score": 0.4672,
           "consistency_score": 0.081
         },
         {
@@ -774,10 +774,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8585,
+          "confidence": 0.8446,
           "match": true,
           "entailment_score": 0.88,
-          "evidence_score": 0.8751,
+          "evidence_score": 0.835,
           "consistency_score": 0.2197
         },
         {
@@ -785,10 +785,10 @@
           "domain": "Cardiology",
           "expected": "BLOCKED",
           "predicted": "BLOCKED",
-          "confidence": 0.1406,
+          "confidence": 0.132,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.3254,
+          "evidence_score": 0.3006,
           "consistency_score": 0.1338
         },
         {
@@ -799,7 +799,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.15,
-          "evidence_score": 0.4305,
+          "evidence_score": 0.4351,
           "consistency_score": 0.2111
         },
         {
@@ -807,10 +807,10 @@
           "domain": "Nephrology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.828,
+          "confidence": 0.8325,
           "match": true,
           "entailment_score": 0.914,
-          "evidence_score": 0.7872,
+          "evidence_score": 0.8005,
           "consistency_score": 0.134
         },
         {
@@ -821,7 +821,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.4348,
+          "evidence_score": 0.4488,
           "consistency_score": 0.0814
         },
         {
@@ -829,10 +829,10 @@
           "domain": "Nephrology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9007,
+          "confidence": 0.9061,
           "match": true,
           "entailment_score": 0.975,
-          "evidence_score": 0.8653,
+          "evidence_score": 0.8812,
           "consistency_score": 0.1804
         },
         {
@@ -840,10 +840,10 @@
           "domain": "Neurology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7503,
+          "confidence": 0.7509,
           "match": true,
           "entailment_score": 0.836,
-          "evidence_score": 0.6579,
+          "evidence_score": 0.6597,
           "consistency_score": 0.1854
         },
         {
@@ -854,7 +854,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.6524,
+          "evidence_score": 0.6542,
           "consistency_score": 0.0875
         },
         {
@@ -862,10 +862,10 @@
           "domain": "Neurology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9096,
+          "confidence": 0.9118,
           "match": true,
           "entailment_score": 0.94,
-          "evidence_score": 0.9436,
+          "evidence_score": 0.95,
           "consistency_score": 0.1892
         },
         {
@@ -876,7 +876,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.5914,
+          "evidence_score": 0.5711,
           "consistency_score": 0.3022
         },
         {
@@ -884,10 +884,10 @@
           "domain": "Endocrinology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7442,
+          "confidence": 0.7495,
           "match": true,
           "entailment_score": 0.86,
-          "evidence_score": 0.5744,
+          "evidence_score": 0.5898,
           "consistency_score": 0.224
         },
         {
@@ -895,10 +895,10 @@
           "domain": "Endocrinology",
           "expected": "BLOCKED",
           "predicted": "CLINICAL_WARNING",
-          "confidence": 0.4186,
+          "confidence": 0.4198,
           "match": false,
           "entailment_score": 0.567,
-          "evidence_score": 0.3608,
+          "evidence_score": 0.3643,
           "consistency_score": 0.186
         },
         {
@@ -906,10 +906,10 @@
           "domain": "Endocrinology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8593,
+          "confidence": 0.8577,
           "match": true,
           "entailment_score": 0.908,
-          "evidence_score": 0.8858,
+          "evidence_score": 0.8813,
           "consistency_score": 0.1372
         },
         {
@@ -917,10 +917,10 @@
           "domain": "Infectious Disease",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8543,
+          "confidence": 0.8557,
           "match": true,
           "entailment_score": 0.867,
-          "evidence_score": 0.8025,
+          "evidence_score": 0.8065,
           "consistency_score": 0.343
         },
         {
@@ -928,10 +928,10 @@
           "domain": "Infectious Disease",
           "expected": "BLOCKED",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7535,
+          "confidence": 0.7533,
           "match": false,
           "entailment_score": 0.758,
-          "evidence_score": 0.8438,
+          "evidence_score": 0.8429,
           "consistency_score": 0.1156
         },
         {
@@ -950,10 +950,10 @@
           "domain": "Pharmacology",
           "expected": "BLOCKED",
           "predicted": "BLOCKED",
-          "confidence": 0.205,
+          "confidence": 0.3118,
           "match": true,
           "entailment_score": 0.3,
-          "evidence_score": 0.154,
+          "evidence_score": 0.4592,
           "consistency_score": 0.0804
         },
         {
@@ -961,10 +961,10 @@
           "domain": "Toxicology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8653,
+          "confidence": 0.8638,
           "match": true,
           "entailment_score": 0.885,
-          "evidence_score": 1.0,
+          "evidence_score": 0.9958,
           "consistency_score": 0.0496
         },
         {
@@ -972,10 +972,10 @@
           "domain": "Immunology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9535,
+          "confidence": 0.9549,
           "match": true,
           "entailment_score": 0.98,
-          "evidence_score": 0.9841,
+          "evidence_score": 0.9883,
           "consistency_score": 0.2195
         },
         {
@@ -983,10 +983,10 @@
           "domain": "Oncology",
           "expected": "CLINICAL_WARNING",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8145,
+          "confidence": 0.7944,
           "match": false,
           "entailment_score": 0.865,
-          "evidence_score": 0.8061,
+          "evidence_score": 0.7477,
           "consistency_score": 0.1698
         },
         {
@@ -994,10 +994,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7678,
+          "confidence": 0.7738,
           "match": true,
           "entailment_score": 0.862,
-          "evidence_score": 0.6777,
+          "evidence_score": 0.6952,
           "consistency_score": 0.1666
         },
         {
@@ -1008,7 +1008,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.3455,
+          "evidence_score": 0.3242,
           "consistency_score": 0.1841
         },
         {
@@ -1016,10 +1016,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9383,
+          "confidence": 0.9356,
           "match": true,
           "entailment_score": 1.0,
-          "evidence_score": 0.901,
+          "evidence_score": 0.8932,
           "consistency_score": 0.2281
         },
         {
@@ -1030,7 +1030,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.7503,
+          "evidence_score": 0.7686,
           "consistency_score": 0.16
         },
         {
@@ -1038,10 +1038,10 @@
           "domain": "Cardiology",
           "expected": "CLINICAL_WARNING",
           "predicted": "CLINICAL_WARNING",
-          "confidence": 0.4384,
+          "confidence": 0.4331,
           "match": true,
           "entailment_score": 0.563,
-          "evidence_score": 0.4823,
+          "evidence_score": 0.4672,
           "consistency_score": 0.081
         },
         {
@@ -1049,10 +1049,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8585,
+          "confidence": 0.8446,
           "match": true,
           "entailment_score": 0.88,
-          "evidence_score": 0.8751,
+          "evidence_score": 0.835,
           "consistency_score": 0.2197
         },
         {
@@ -1060,10 +1060,10 @@
           "domain": "Cardiology",
           "expected": "BLOCKED",
           "predicted": "BLOCKED",
-          "confidence": 0.1406,
+          "confidence": 0.132,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.3254,
+          "evidence_score": 0.3006,
           "consistency_score": 0.1338
         },
         {
@@ -1074,7 +1074,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.15,
-          "evidence_score": 0.4305,
+          "evidence_score": 0.4351,
           "consistency_score": 0.2111
         },
         {
@@ -1082,10 +1082,10 @@
           "domain": "Nephrology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.828,
+          "confidence": 0.8325,
           "match": true,
           "entailment_score": 0.914,
-          "evidence_score": 0.7872,
+          "evidence_score": 0.8005,
           "consistency_score": 0.134
         },
         {
@@ -1096,7 +1096,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.4348,
+          "evidence_score": 0.4488,
           "consistency_score": 0.0814
         },
         {
@@ -1104,10 +1104,10 @@
           "domain": "Nephrology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9007,
+          "confidence": 0.9061,
           "match": true,
           "entailment_score": 0.975,
-          "evidence_score": 0.8653,
+          "evidence_score": 0.8812,
           "consistency_score": 0.1804
         },
         {
@@ -1115,10 +1115,10 @@
           "domain": "Neurology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7503,
+          "confidence": 0.7509,
           "match": true,
           "entailment_score": 0.836,
-          "evidence_score": 0.6579,
+          "evidence_score": 0.6597,
           "consistency_score": 0.1854
         },
         {
@@ -1129,7 +1129,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.6524,
+          "evidence_score": 0.6542,
           "consistency_score": 0.0875
         },
         {
@@ -1137,10 +1137,10 @@
           "domain": "Neurology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9096,
+          "confidence": 0.9118,
           "match": true,
           "entailment_score": 0.94,
-          "evidence_score": 0.9436,
+          "evidence_score": 0.95,
           "consistency_score": 0.1892
         },
         {
@@ -1151,7 +1151,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.5914,
+          "evidence_score": 0.5711,
           "consistency_score": 0.3022
         },
         {
@@ -1159,10 +1159,10 @@
           "domain": "Endocrinology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7442,
+          "confidence": 0.7495,
           "match": true,
           "entailment_score": 0.86,
-          "evidence_score": 0.5744,
+          "evidence_score": 0.5898,
           "consistency_score": 0.224
         },
         {
@@ -1170,10 +1170,10 @@
           "domain": "Endocrinology",
           "expected": "BLOCKED",
           "predicted": "CLINICAL_WARNING",
-          "confidence": 0.4186,
+          "confidence": 0.4198,
           "match": false,
           "entailment_score": 0.567,
-          "evidence_score": 0.3608,
+          "evidence_score": 0.3643,
           "consistency_score": 0.186
         },
         {
@@ -1181,10 +1181,10 @@
           "domain": "Endocrinology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8593,
+          "confidence": 0.8577,
           "match": true,
           "entailment_score": 0.908,
-          "evidence_score": 0.8858,
+          "evidence_score": 0.8813,
           "consistency_score": 0.1372
         },
         {
@@ -1192,10 +1192,10 @@
           "domain": "Infectious Disease",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8543,
+          "confidence": 0.8557,
           "match": true,
           "entailment_score": 0.867,
-          "evidence_score": 0.8025,
+          "evidence_score": 0.8065,
           "consistency_score": 0.343
         },
         {
@@ -1203,10 +1203,10 @@
           "domain": "Infectious Disease",
           "expected": "BLOCKED",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7535,
+          "confidence": 0.7533,
           "match": false,
           "entailment_score": 0.758,
-          "evidence_score": 0.8438,
+          "evidence_score": 0.8429,
           "consistency_score": 0.1156
         },
         {
@@ -1225,10 +1225,10 @@
           "domain": "Pharmacology",
           "expected": "BLOCKED",
           "predicted": "BLOCKED",
-          "confidence": 0.205,
+          "confidence": 0.3118,
           "match": true,
           "entailment_score": 0.3,
-          "evidence_score": 0.154,
+          "evidence_score": 0.4592,
           "consistency_score": 0.0804
         },
         {
@@ -1236,10 +1236,10 @@
           "domain": "Toxicology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8653,
+          "confidence": 0.8638,
           "match": true,
           "entailment_score": 0.885,
-          "evidence_score": 1.0,
+          "evidence_score": 0.9958,
           "consistency_score": 0.0496
         },
         {
@@ -1247,10 +1247,10 @@
           "domain": "Immunology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9535,
+          "confidence": 0.9549,
           "match": true,
           "entailment_score": 0.98,
-          "evidence_score": 0.9841,
+          "evidence_score": 0.9883,
           "consistency_score": 0.2195
         },
         {
@@ -1258,10 +1258,10 @@
           "domain": "Oncology",
           "expected": "CLINICAL_WARNING",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8145,
+          "confidence": 0.7944,
           "match": false,
           "entailment_score": 0.865,
-          "evidence_score": 0.8061,
+          "evidence_score": 0.7477,
           "consistency_score": 0.1698
         }
       ]
@@ -1275,8 +1275,8 @@
       "macro_f1_pct": 77.25,
       "fatal_hallucination_catch_rate_pct": 90.0,
       "false_negative_fatal_rate_pct": 10.0,
-      "mean_safe_confidence_pct": 86.27,
-      "mean_blocked_confidence_pct": 24.18,
+      "mean_safe_confidence_pct": 86.32,
+      "mean_blocked_confidence_pct": 25.17,
       "confusion_matrix": {
         "VERIFIED_SAFE": {
           "VERIFIED_SAFE": 52,
@@ -1300,21 +1300,21 @@
           "recall_pct": 100.0,
           "f1_score_pct": 92.86,
           "support": 52,
-          "mean_confidence_pct": 86.27
+          "mean_confidence_pct": 86.32
         },
         "CLINICAL_WARNING": {
           "precision_pct": 50.0,
           "recall_pct": 50.0,
           "f1_score_pct": 50.0,
           "support": 8,
-          "mean_confidence_pct": 62.64
+          "mean_confidence_pct": 61.38
         },
         "BLOCKED": {
           "precision_pct": 100.0,
           "recall_pct": 80.0,
           "f1_score_pct": 88.89,
           "support": 40,
-          "mean_confidence_pct": 24.18
+          "mean_confidence_pct": 25.17
         }
       },
       "case_samples": [
@@ -1323,10 +1323,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7678,
+          "confidence": 0.7738,
           "match": true,
           "entailment_score": 0.862,
-          "evidence_score": 0.6777,
+          "evidence_score": 0.6952,
           "consistency_score": 0.1666
         },
         {
@@ -1337,7 +1337,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.3455,
+          "evidence_score": 0.3242,
           "consistency_score": 0.1841
         },
         {
@@ -1345,10 +1345,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9383,
+          "confidence": 0.9356,
           "match": true,
           "entailment_score": 1.0,
-          "evidence_score": 0.901,
+          "evidence_score": 0.8932,
           "consistency_score": 0.2281
         },
         {
@@ -1359,7 +1359,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.7503,
+          "evidence_score": 0.7686,
           "consistency_score": 0.16
         },
         {
@@ -1367,10 +1367,10 @@
           "domain": "Cardiology",
           "expected": "CLINICAL_WARNING",
           "predicted": "CLINICAL_WARNING",
-          "confidence": 0.4384,
+          "confidence": 0.4331,
           "match": true,
           "entailment_score": 0.563,
-          "evidence_score": 0.4823,
+          "evidence_score": 0.4672,
           "consistency_score": 0.081
         },
         {
@@ -1378,10 +1378,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8585,
+          "confidence": 0.8446,
           "match": true,
           "entailment_score": 0.88,
-          "evidence_score": 0.8751,
+          "evidence_score": 0.835,
           "consistency_score": 0.2197
         },
         {
@@ -1389,10 +1389,10 @@
           "domain": "Cardiology",
           "expected": "BLOCKED",
           "predicted": "BLOCKED",
-          "confidence": 0.1406,
+          "confidence": 0.132,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.3254,
+          "evidence_score": 0.3006,
           "consistency_score": 0.1338
         },
         {
@@ -1403,7 +1403,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.15,
-          "evidence_score": 0.4305,
+          "evidence_score": 0.4351,
           "consistency_score": 0.2111
         },
         {
@@ -1411,10 +1411,10 @@
           "domain": "Nephrology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.828,
+          "confidence": 0.8325,
           "match": true,
           "entailment_score": 0.914,
-          "evidence_score": 0.7872,
+          "evidence_score": 0.8005,
           "consistency_score": 0.134
         },
         {
@@ -1425,7 +1425,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.4348,
+          "evidence_score": 0.4488,
           "consistency_score": 0.0814
         },
         {
@@ -1433,10 +1433,10 @@
           "domain": "Nephrology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9007,
+          "confidence": 0.9061,
           "match": true,
           "entailment_score": 0.975,
-          "evidence_score": 0.8653,
+          "evidence_score": 0.8812,
           "consistency_score": 0.1804
         },
         {
@@ -1444,10 +1444,10 @@
           "domain": "Neurology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7503,
+          "confidence": 0.7509,
           "match": true,
           "entailment_score": 0.836,
-          "evidence_score": 0.6579,
+          "evidence_score": 0.6597,
           "consistency_score": 0.1854
         },
         {
@@ -1458,7 +1458,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.6524,
+          "evidence_score": 0.6542,
           "consistency_score": 0.0875
         },
         {
@@ -1466,10 +1466,10 @@
           "domain": "Neurology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9096,
+          "confidence": 0.9118,
           "match": true,
           "entailment_score": 0.94,
-          "evidence_score": 0.9436,
+          "evidence_score": 0.95,
           "consistency_score": 0.1892
         },
         {
@@ -1480,7 +1480,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.5914,
+          "evidence_score": 0.5711,
           "consistency_score": 0.3022
         },
         {
@@ -1488,10 +1488,10 @@
           "domain": "Endocrinology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7442,
+          "confidence": 0.7495,
           "match": true,
           "entailment_score": 0.86,
-          "evidence_score": 0.5744,
+          "evidence_score": 0.5898,
           "consistency_score": 0.224
         },
         {
@@ -1499,10 +1499,10 @@
           "domain": "Endocrinology",
           "expected": "BLOCKED",
           "predicted": "CLINICAL_WARNING",
-          "confidence": 0.4186,
+          "confidence": 0.4198,
           "match": false,
           "entailment_score": 0.567,
-          "evidence_score": 0.3608,
+          "evidence_score": 0.3643,
           "consistency_score": 0.186
         },
         {
@@ -1510,10 +1510,10 @@
           "domain": "Endocrinology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8593,
+          "confidence": 0.8577,
           "match": true,
           "entailment_score": 0.908,
-          "evidence_score": 0.8858,
+          "evidence_score": 0.8813,
           "consistency_score": 0.1372
         },
         {
@@ -1521,10 +1521,10 @@
           "domain": "Infectious Disease",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8543,
+          "confidence": 0.8557,
           "match": true,
           "entailment_score": 0.867,
-          "evidence_score": 0.8025,
+          "evidence_score": 0.8065,
           "consistency_score": 0.343
         },
         {
@@ -1532,10 +1532,10 @@
           "domain": "Infectious Disease",
           "expected": "BLOCKED",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7535,
+          "confidence": 0.7533,
           "match": false,
           "entailment_score": 0.758,
-          "evidence_score": 0.8438,
+          "evidence_score": 0.8429,
           "consistency_score": 0.1156
         },
         {
@@ -1554,10 +1554,10 @@
           "domain": "Pharmacology",
           "expected": "BLOCKED",
           "predicted": "BLOCKED",
-          "confidence": 0.205,
+          "confidence": 0.3118,
           "match": true,
           "entailment_score": 0.3,
-          "evidence_score": 0.154,
+          "evidence_score": 0.4592,
           "consistency_score": 0.0804
         },
         {
@@ -1565,10 +1565,10 @@
           "domain": "Toxicology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8653,
+          "confidence": 0.8638,
           "match": true,
           "entailment_score": 0.885,
-          "evidence_score": 1.0,
+          "evidence_score": 0.9958,
           "consistency_score": 0.0496
         },
         {
@@ -1576,10 +1576,10 @@
           "domain": "Immunology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9535,
+          "confidence": 0.9549,
           "match": true,
           "entailment_score": 0.98,
-          "evidence_score": 0.9841,
+          "evidence_score": 0.9883,
           "consistency_score": 0.2195
         },
         {
@@ -1587,10 +1587,10 @@
           "domain": "Oncology",
           "expected": "CLINICAL_WARNING",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8145,
+          "confidence": 0.7944,
           "match": false,
           "entailment_score": 0.865,
-          "evidence_score": 0.8061,
+          "evidence_score": 0.7477,
           "consistency_score": 0.1698
         },
         {
@@ -1598,10 +1598,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7678,
+          "confidence": 0.7738,
           "match": true,
           "entailment_score": 0.862,
-          "evidence_score": 0.6777,
+          "evidence_score": 0.6952,
           "consistency_score": 0.1666
         },
         {
@@ -1612,7 +1612,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.3455,
+          "evidence_score": 0.3242,
           "consistency_score": 0.1841
         },
         {
@@ -1620,10 +1620,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9383,
+          "confidence": 0.9356,
           "match": true,
           "entailment_score": 1.0,
-          "evidence_score": 0.901,
+          "evidence_score": 0.8932,
           "consistency_score": 0.2281
         },
         {
@@ -1634,7 +1634,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.7503,
+          "evidence_score": 0.7686,
           "consistency_score": 0.16
         },
         {
@@ -1642,10 +1642,10 @@
           "domain": "Cardiology",
           "expected": "CLINICAL_WARNING",
           "predicted": "CLINICAL_WARNING",
-          "confidence": 0.4384,
+          "confidence": 0.4331,
           "match": true,
           "entailment_score": 0.563,
-          "evidence_score": 0.4823,
+          "evidence_score": 0.4672,
           "consistency_score": 0.081
         },
         {
@@ -1653,10 +1653,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8585,
+          "confidence": 0.8446,
           "match": true,
           "entailment_score": 0.88,
-          "evidence_score": 0.8751,
+          "evidence_score": 0.835,
           "consistency_score": 0.2197
         },
         {
@@ -1664,10 +1664,10 @@
           "domain": "Cardiology",
           "expected": "BLOCKED",
           "predicted": "BLOCKED",
-          "confidence": 0.1406,
+          "confidence": 0.132,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.3254,
+          "evidence_score": 0.3006,
           "consistency_score": 0.1338
         },
         {
@@ -1678,7 +1678,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.15,
-          "evidence_score": 0.4305,
+          "evidence_score": 0.4351,
           "consistency_score": 0.2111
         },
         {
@@ -1686,10 +1686,10 @@
           "domain": "Nephrology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.828,
+          "confidence": 0.8325,
           "match": true,
           "entailment_score": 0.914,
-          "evidence_score": 0.7872,
+          "evidence_score": 0.8005,
           "consistency_score": 0.134
         },
         {
@@ -1700,7 +1700,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.4348,
+          "evidence_score": 0.4488,
           "consistency_score": 0.0814
         },
         {
@@ -1708,10 +1708,10 @@
           "domain": "Nephrology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9007,
+          "confidence": 0.9061,
           "match": true,
           "entailment_score": 0.975,
-          "evidence_score": 0.8653,
+          "evidence_score": 0.8812,
           "consistency_score": 0.1804
         },
         {
@@ -1719,10 +1719,10 @@
           "domain": "Neurology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7503,
+          "confidence": 0.7509,
           "match": true,
           "entailment_score": 0.836,
-          "evidence_score": 0.6579,
+          "evidence_score": 0.6597,
           "consistency_score": 0.1854
         },
         {
@@ -1733,7 +1733,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.6524,
+          "evidence_score": 0.6542,
           "consistency_score": 0.0875
         },
         {
@@ -1741,10 +1741,10 @@
           "domain": "Neurology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9096,
+          "confidence": 0.9118,
           "match": true,
           "entailment_score": 0.94,
-          "evidence_score": 0.9436,
+          "evidence_score": 0.95,
           "consistency_score": 0.1892
         },
         {
@@ -1755,7 +1755,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.5914,
+          "evidence_score": 0.5711,
           "consistency_score": 0.3022
         },
         {
@@ -1763,10 +1763,10 @@
           "domain": "Endocrinology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7442,
+          "confidence": 0.7495,
           "match": true,
           "entailment_score": 0.86,
-          "evidence_score": 0.5744,
+          "evidence_score": 0.5898,
           "consistency_score": 0.224
         },
         {
@@ -1774,10 +1774,10 @@
           "domain": "Endocrinology",
           "expected": "BLOCKED",
           "predicted": "CLINICAL_WARNING",
-          "confidence": 0.4186,
+          "confidence": 0.4198,
           "match": false,
           "entailment_score": 0.567,
-          "evidence_score": 0.3608,
+          "evidence_score": 0.3643,
           "consistency_score": 0.186
         },
         {
@@ -1785,10 +1785,10 @@
           "domain": "Endocrinology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8593,
+          "confidence": 0.8577,
           "match": true,
           "entailment_score": 0.908,
-          "evidence_score": 0.8858,
+          "evidence_score": 0.8813,
           "consistency_score": 0.1372
         },
         {
@@ -1796,10 +1796,10 @@
           "domain": "Infectious Disease",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8543,
+          "confidence": 0.8557,
           "match": true,
           "entailment_score": 0.867,
-          "evidence_score": 0.8025,
+          "evidence_score": 0.8065,
           "consistency_score": 0.343
         },
         {
@@ -1807,10 +1807,10 @@
           "domain": "Infectious Disease",
           "expected": "BLOCKED",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7535,
+          "confidence": 0.7533,
           "match": false,
           "entailment_score": 0.758,
-          "evidence_score": 0.8438,
+          "evidence_score": 0.8429,
           "consistency_score": 0.1156
         },
         {
@@ -1829,10 +1829,10 @@
           "domain": "Pharmacology",
           "expected": "BLOCKED",
           "predicted": "BLOCKED",
-          "confidence": 0.205,
+          "confidence": 0.3118,
           "match": true,
           "entailment_score": 0.3,
-          "evidence_score": 0.154,
+          "evidence_score": 0.4592,
           "consistency_score": 0.0804
         },
         {
@@ -1840,10 +1840,10 @@
           "domain": "Toxicology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8653,
+          "confidence": 0.8638,
           "match": true,
           "entailment_score": 0.885,
-          "evidence_score": 1.0,
+          "evidence_score": 0.9958,
           "consistency_score": 0.0496
         },
         {
@@ -1851,10 +1851,10 @@
           "domain": "Immunology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9535,
+          "confidence": 0.9549,
           "match": true,
           "entailment_score": 0.98,
-          "evidence_score": 0.9841,
+          "evidence_score": 0.9883,
           "consistency_score": 0.2195
         },
         {
@@ -1862,10 +1862,10 @@
           "domain": "Oncology",
           "expected": "CLINICAL_WARNING",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8145,
+          "confidence": 0.7944,
           "match": false,
           "entailment_score": 0.865,
-          "evidence_score": 0.8061,
+          "evidence_score": 0.7477,
           "consistency_score": 0.1698
         },
         {
@@ -1873,10 +1873,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7678,
+          "confidence": 0.7738,
           "match": true,
           "entailment_score": 0.862,
-          "evidence_score": 0.6777,
+          "evidence_score": 0.6952,
           "consistency_score": 0.1666
         },
         {
@@ -1887,7 +1887,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.3455,
+          "evidence_score": 0.3242,
           "consistency_score": 0.1841
         },
         {
@@ -1895,10 +1895,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9383,
+          "confidence": 0.9356,
           "match": true,
           "entailment_score": 1.0,
-          "evidence_score": 0.901,
+          "evidence_score": 0.8932,
           "consistency_score": 0.2281
         },
         {
@@ -1909,7 +1909,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.7503,
+          "evidence_score": 0.7686,
           "consistency_score": 0.16
         },
         {
@@ -1917,10 +1917,10 @@
           "domain": "Cardiology",
           "expected": "CLINICAL_WARNING",
           "predicted": "CLINICAL_WARNING",
-          "confidence": 0.4384,
+          "confidence": 0.4331,
           "match": true,
           "entailment_score": 0.563,
-          "evidence_score": 0.4823,
+          "evidence_score": 0.4672,
           "consistency_score": 0.081
         },
         {
@@ -1928,10 +1928,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8585,
+          "confidence": 0.8446,
           "match": true,
           "entailment_score": 0.88,
-          "evidence_score": 0.8751,
+          "evidence_score": 0.835,
           "consistency_score": 0.2197
         },
         {
@@ -1939,10 +1939,10 @@
           "domain": "Cardiology",
           "expected": "BLOCKED",
           "predicted": "BLOCKED",
-          "confidence": 0.1406,
+          "confidence": 0.132,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.3254,
+          "evidence_score": 0.3006,
           "consistency_score": 0.1338
         },
         {
@@ -1953,7 +1953,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.15,
-          "evidence_score": 0.4305,
+          "evidence_score": 0.4351,
           "consistency_score": 0.2111
         },
         {
@@ -1961,10 +1961,10 @@
           "domain": "Nephrology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.828,
+          "confidence": 0.8325,
           "match": true,
           "entailment_score": 0.914,
-          "evidence_score": 0.7872,
+          "evidence_score": 0.8005,
           "consistency_score": 0.134
         },
         {
@@ -1975,7 +1975,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.4348,
+          "evidence_score": 0.4488,
           "consistency_score": 0.0814
         },
         {
@@ -1983,10 +1983,10 @@
           "domain": "Nephrology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9007,
+          "confidence": 0.9061,
           "match": true,
           "entailment_score": 0.975,
-          "evidence_score": 0.8653,
+          "evidence_score": 0.8812,
           "consistency_score": 0.1804
         },
         {
@@ -1994,10 +1994,10 @@
           "domain": "Neurology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7503,
+          "confidence": 0.7509,
           "match": true,
           "entailment_score": 0.836,
-          "evidence_score": 0.6579,
+          "evidence_score": 0.6597,
           "consistency_score": 0.1854
         },
         {
@@ -2008,7 +2008,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.6524,
+          "evidence_score": 0.6542,
           "consistency_score": 0.0875
         },
         {
@@ -2016,10 +2016,10 @@
           "domain": "Neurology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9096,
+          "confidence": 0.9118,
           "match": true,
           "entailment_score": 0.94,
-          "evidence_score": 0.9436,
+          "evidence_score": 0.95,
           "consistency_score": 0.1892
         },
         {
@@ -2030,7 +2030,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.5914,
+          "evidence_score": 0.5711,
           "consistency_score": 0.3022
         },
         {
@@ -2038,10 +2038,10 @@
           "domain": "Endocrinology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7442,
+          "confidence": 0.7495,
           "match": true,
           "entailment_score": 0.86,
-          "evidence_score": 0.5744,
+          "evidence_score": 0.5898,
           "consistency_score": 0.224
         },
         {
@@ -2049,10 +2049,10 @@
           "domain": "Endocrinology",
           "expected": "BLOCKED",
           "predicted": "CLINICAL_WARNING",
-          "confidence": 0.4186,
+          "confidence": 0.4198,
           "match": false,
           "entailment_score": 0.567,
-          "evidence_score": 0.3608,
+          "evidence_score": 0.3643,
           "consistency_score": 0.186
         },
         {
@@ -2060,10 +2060,10 @@
           "domain": "Endocrinology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8593,
+          "confidence": 0.8577,
           "match": true,
           "entailment_score": 0.908,
-          "evidence_score": 0.8858,
+          "evidence_score": 0.8813,
           "consistency_score": 0.1372
         },
         {
@@ -2071,10 +2071,10 @@
           "domain": "Infectious Disease",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8543,
+          "confidence": 0.8557,
           "match": true,
           "entailment_score": 0.867,
-          "evidence_score": 0.8025,
+          "evidence_score": 0.8065,
           "consistency_score": 0.343
         },
         {
@@ -2082,10 +2082,10 @@
           "domain": "Infectious Disease",
           "expected": "BLOCKED",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7535,
+          "confidence": 0.7533,
           "match": false,
           "entailment_score": 0.758,
-          "evidence_score": 0.8438,
+          "evidence_score": 0.8429,
           "consistency_score": 0.1156
         },
         {
@@ -2104,10 +2104,10 @@
           "domain": "Pharmacology",
           "expected": "BLOCKED",
           "predicted": "BLOCKED",
-          "confidence": 0.205,
+          "confidence": 0.3118,
           "match": true,
           "entailment_score": 0.3,
-          "evidence_score": 0.154,
+          "evidence_score": 0.4592,
           "consistency_score": 0.0804
         },
         {
@@ -2115,10 +2115,10 @@
           "domain": "Toxicology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8653,
+          "confidence": 0.8638,
           "match": true,
           "entailment_score": 0.885,
-          "evidence_score": 1.0,
+          "evidence_score": 0.9958,
           "consistency_score": 0.0496
         },
         {
@@ -2126,10 +2126,10 @@
           "domain": "Immunology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9535,
+          "confidence": 0.9549,
           "match": true,
           "entailment_score": 0.98,
-          "evidence_score": 0.9841,
+          "evidence_score": 0.9883,
           "consistency_score": 0.2195
         },
         {
@@ -2137,10 +2137,10 @@
           "domain": "Oncology",
           "expected": "CLINICAL_WARNING",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8145,
+          "confidence": 0.7944,
           "match": false,
           "entailment_score": 0.865,
-          "evidence_score": 0.8061,
+          "evidence_score": 0.7477,
           "consistency_score": 0.1698
         },
         {
@@ -2148,10 +2148,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7678,
+          "confidence": 0.7738,
           "match": true,
           "entailment_score": 0.862,
-          "evidence_score": 0.6777,
+          "evidence_score": 0.6952,
           "consistency_score": 0.1666
         },
         {
@@ -2162,7 +2162,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.3455,
+          "evidence_score": 0.3242,
           "consistency_score": 0.1841
         },
         {
@@ -2170,10 +2170,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9383,
+          "confidence": 0.9356,
           "match": true,
           "entailment_score": 1.0,
-          "evidence_score": 0.901,
+          "evidence_score": 0.8932,
           "consistency_score": 0.2281
         },
         {
@@ -2184,7 +2184,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.7503,
+          "evidence_score": 0.7686,
           "consistency_score": 0.16
         },
         {
@@ -2192,10 +2192,10 @@
           "domain": "Cardiology",
           "expected": "CLINICAL_WARNING",
           "predicted": "CLINICAL_WARNING",
-          "confidence": 0.4384,
+          "confidence": 0.4331,
           "match": true,
           "entailment_score": 0.563,
-          "evidence_score": 0.4823,
+          "evidence_score": 0.4672,
           "consistency_score": 0.081
         },
         {
@@ -2203,10 +2203,10 @@
           "domain": "Cardiology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8585,
+          "confidence": 0.8446,
           "match": true,
           "entailment_score": 0.88,
-          "evidence_score": 0.8751,
+          "evidence_score": 0.835,
           "consistency_score": 0.2197
         },
         {
@@ -2214,10 +2214,10 @@
           "domain": "Cardiology",
           "expected": "BLOCKED",
           "predicted": "BLOCKED",
-          "confidence": 0.1406,
+          "confidence": 0.132,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.3254,
+          "evidence_score": 0.3006,
           "consistency_score": 0.1338
         },
         {
@@ -2228,7 +2228,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.15,
-          "evidence_score": 0.4305,
+          "evidence_score": 0.4351,
           "consistency_score": 0.2111
         },
         {
@@ -2236,10 +2236,10 @@
           "domain": "Nephrology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.828,
+          "confidence": 0.8325,
           "match": true,
           "entailment_score": 0.914,
-          "evidence_score": 0.7872,
+          "evidence_score": 0.8005,
           "consistency_score": 0.134
         },
         {
@@ -2250,7 +2250,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.4348,
+          "evidence_score": 0.4488,
           "consistency_score": 0.0814
         },
         {
@@ -2258,10 +2258,10 @@
           "domain": "Nephrology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9007,
+          "confidence": 0.9061,
           "match": true,
           "entailment_score": 0.975,
-          "evidence_score": 0.8653,
+          "evidence_score": 0.8812,
           "consistency_score": 0.1804
         },
         {
@@ -2269,10 +2269,10 @@
           "domain": "Neurology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7503,
+          "confidence": 0.7509,
           "match": true,
           "entailment_score": 0.836,
-          "evidence_score": 0.6579,
+          "evidence_score": 0.6597,
           "consistency_score": 0.1854
         },
         {
@@ -2283,7 +2283,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.6524,
+          "evidence_score": 0.6542,
           "consistency_score": 0.0875
         },
         {
@@ -2291,10 +2291,10 @@
           "domain": "Neurology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9096,
+          "confidence": 0.9118,
           "match": true,
           "entailment_score": 0.94,
-          "evidence_score": 0.9436,
+          "evidence_score": 0.95,
           "consistency_score": 0.1892
         },
         {
@@ -2305,7 +2305,7 @@
           "confidence": 0.15,
           "match": true,
           "entailment_score": 0.0,
-          "evidence_score": 0.5914,
+          "evidence_score": 0.5711,
           "consistency_score": 0.3022
         },
         {
@@ -2313,10 +2313,10 @@
           "domain": "Endocrinology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7442,
+          "confidence": 0.7495,
           "match": true,
           "entailment_score": 0.86,
-          "evidence_score": 0.5744,
+          "evidence_score": 0.5898,
           "consistency_score": 0.224
         },
         {
@@ -2324,10 +2324,10 @@
           "domain": "Endocrinology",
           "expected": "BLOCKED",
           "predicted": "CLINICAL_WARNING",
-          "confidence": 0.4186,
+          "confidence": 0.4198,
           "match": false,
           "entailment_score": 0.567,
-          "evidence_score": 0.3608,
+          "evidence_score": 0.3643,
           "consistency_score": 0.186
         },
         {
@@ -2335,10 +2335,10 @@
           "domain": "Endocrinology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8593,
+          "confidence": 0.8577,
           "match": true,
           "entailment_score": 0.908,
-          "evidence_score": 0.8858,
+          "evidence_score": 0.8813,
           "consistency_score": 0.1372
         },
         {
@@ -2346,10 +2346,10 @@
           "domain": "Infectious Disease",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8543,
+          "confidence": 0.8557,
           "match": true,
           "entailment_score": 0.867,
-          "evidence_score": 0.8025,
+          "evidence_score": 0.8065,
           "consistency_score": 0.343
         },
         {
@@ -2357,10 +2357,10 @@
           "domain": "Infectious Disease",
           "expected": "BLOCKED",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.7535,
+          "confidence": 0.7533,
           "match": false,
           "entailment_score": 0.758,
-          "evidence_score": 0.8438,
+          "evidence_score": 0.8429,
           "consistency_score": 0.1156
         },
         {
@@ -2379,10 +2379,10 @@
           "domain": "Pharmacology",
           "expected": "BLOCKED",
           "predicted": "BLOCKED",
-          "confidence": 0.205,
+          "confidence": 0.3118,
           "match": true,
           "entailment_score": 0.3,
-          "evidence_score": 0.154,
+          "evidence_score": 0.4592,
           "consistency_score": 0.0804
         },
         {
@@ -2390,10 +2390,10 @@
           "domain": "Toxicology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8653,
+          "confidence": 0.8638,
           "match": true,
           "entailment_score": 0.885,
-          "evidence_score": 1.0,
+          "evidence_score": 0.9958,
           "consistency_score": 0.0496
         },
         {
@@ -2401,10 +2401,10 @@
           "domain": "Immunology",
           "expected": "VERIFIED_SAFE",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.9535,
+          "confidence": 0.9549,
           "match": true,
           "entailment_score": 0.98,
-          "evidence_score": 0.9841,
+          "evidence_score": 0.9883,
           "consistency_score": 0.2195
         },
         {
@@ -2412,10 +2412,10 @@
           "domain": "Oncology",
           "expected": "CLINICAL_WARNING",
           "predicted": "VERIFIED_SAFE",
-          "confidence": 0.8145,
+          "confidence": 0.7944,
           "match": false,
           "entailment_score": 0.865,
-          "evidence_score": 0.8061,
+          "evidence_score": 0.7477,
           "consistency_score": 0.1698
         }
       ]
@@ -2444,21 +2444,21 @@
       "recall_pct": 100.0,
       "f1_score_pct": 92.86,
       "support": 52,
-      "mean_confidence_pct": 86.27
+      "mean_confidence_pct": 86.32
     },
     "CLINICAL_WARNING": {
       "precision_pct": 50.0,
       "recall_pct": 50.0,
       "f1_score_pct": 50.0,
       "support": 8,
-      "mean_confidence_pct": 62.64
+      "mean_confidence_pct": 61.38
     },
     "BLOCKED": {
       "precision_pct": 100.0,
       "recall_pct": 80.0,
       "f1_score_pct": 88.89,
       "support": 40,
-      "mean_confidence_pct": 24.18
+      "mean_confidence_pct": 25.17
     }
   },
   "conclusions": {

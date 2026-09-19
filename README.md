@@ -1,12 +1,12 @@
-# 🛡️ A Quantum-Secure Federated Learning Framework with Hallucination Detection for Reliable Healthcare AI
+# 🛡️ Quantum-Secure Federated Learning Framework with Hallucination Detection for Healthcare AI
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-brightgreen.svg)](https://www.python.org/)
 [![NIST PQC: FIPS 203/204](https://img.shields.io/badge/NIST%20PQC-FIPS%20203%20%2F%20204-purple.svg)](https://csrc.nist.gov/pqc)
-[![Federated Learning: FedAvg](https://img.shields.io/badge/Federated%20Learning-FedAvg%20%2B%20QLoRA-orange.svg)](https://arxiv.org/abs/2305.14314)
-[![FastAPI & UI](https://img.shields.io/badge/Frontend-Interactive%20Clinical%20UI-indigo.svg)](http://127.0.0.1:8000)
+[![Federated Learning](https://img.shields.io/badge/Federated%20Learning-FedAvg%20%2B%20QLoRA-orange.svg)](https://github.com/Aniketkoppaka/Quantum-Secure-Federated-Learning-Framework-with-Hallucination-Detection-for-Reliable-Healthcare-AI)
+[![Interactive Clinical UI](https://img.shields.io/badge/Frontend-Interactive%20Clinical%20UI-indigo.svg)](http://127.0.0.1:8000)
 
-A production-grade, decentralized healthcare artificial intelligence framework uniting **NIST-Standardized Post-Quantum Cryptography (PQC)**, **Federated Parameter-Efficient Fine-Tuning (FedLoRA)** across hospital edge nodes, and a **Multi-Tier Clinical Hallucination Detection & Fact-Checking Engine** to guarantee patient safety, cryptographic integrity, and zero EHR data leakage.
+An end-to-end, decentralized healthcare artificial intelligence platform uniting **NIST-Standardized Post-Quantum Cryptography (PQC)**, **Federated Parameter-Efficient Fine-Tuning (FedLoRA)** across hospital edge nodes, and a **Multi-Tier Clinical Hallucination Detection & Fact-Checking Engine** to guarantee patient safety, cryptographic integrity, and zero EHR data leakage.
 
 ---
 

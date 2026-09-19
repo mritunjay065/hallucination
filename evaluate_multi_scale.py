@@ -393,7 +393,9 @@ def evaluate_case_subset(
     macro_f1 = (macro_f1 / len(classes)) * 100
 
     red_flag_catch_rate = (red_flag_caught / red_flag_total) * 100 if red_flag_total > 0 else 100.0
-    false_negative_fatal_rate = ((red_flag_total - red_flag_caught) / red_flag_total) * 100 if red_flag_total > 0 else 0.0
+    # True High-Risk False Negative Rate: dangerous cases incorrectly approved as VERIFIED_SAFE
+    dangerous_as_safe = matrix["BLOCKED"]["VERIFIED_SAFE"] if "BLOCKED" in matrix and "VERIFIED_SAFE" in matrix["BLOCKED"] else 0
+    false_negative_fatal_rate = (dangerous_as_safe / red_flag_total) * 100 if red_flag_total > 0 else 0.0
 
     return {
         "scale_name": scale_label,

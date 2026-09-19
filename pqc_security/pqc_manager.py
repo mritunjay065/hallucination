@@ -68,16 +68,25 @@ class PQCManager:
     ) -> SecurePayload:
         """
         Prepares a quantum-encrypted and digitally signed model update payload to send to the central server.
+        Follows Encrypt-then-Sign paradigm: Encrypts update first, then signs ciphertext envelope.
         """
         # 1. Serialize weights
         payload_bytes = json.dumps(weights_dict).encode("utf-8")
         
-        # 2. Digitally sign raw weights with CRYSTALS-Dilithium
-        payload_hash = hashlib.sha3_256(payload_bytes).digest()
-        signature = self.dilithium.sign(payload_hash, sender_dilithium_sk, signer_id=sender_id)
-
-        # 3. Encrypt raw weights using CRYSTALS-Kyber KEM + AES-256-GCM
+        # 2. Encrypt raw weights using CRYSTALS-Kyber KEM + AES-256-GCM
         kyber_ct = self.kyber.encrypt_payload(payload_bytes, server_kyber_pk)
+
+        # 3. Digitally sign encrypted package (Encrypt-then-Sign) to prevent oracle attacks
+        # Preimage binds: Ciphertext, Nonce, KEM Ciphertext, Sender ID, Round Number
+        sig_preimage = (
+            kyber_ct.encrypted_payload +
+            kyber_ct.nonce +
+            kyber_ct.kem_ciphertext +
+            sender_id.encode("utf-8") +
+            str(round_number).encode("utf-8")
+        )
+        payload_hash = hashlib.sha3_256(sig_preimage).digest()
+        signature = self.dilithium.sign(payload_hash, sender_dilithium_sk, signer_id=sender_id)
 
         return SecurePayload(
             sender_id=sender_id,
@@ -97,20 +106,29 @@ class PQCManager:
     ) -> Tuple[bool, Optional[Dict[str, Any]], str]:
         """
         Verifies sender signature and decrypts weights at the server side.
+        CRITICAL: Verifies Dilithium signature BEFORE decrypting to prevent unauthenticated oracle attacks.
         Returns: (is_valid, weights_dict, status_message)
         """
         try:
-            # 1. Decrypt payload using Kyber KEM secret key
             kyber_ct = KyberCiphertext.from_dict(secure_payload.kyber_ciphertext)
-            decrypted_bytes = self.kyber.decrypt_payload(kyber_ct, server_kyber_sk)
-            
-            # 2. Verify Dilithium signature
-            payload_hash = hashlib.sha3_256(decrypted_bytes).digest()
+
+            # 1. Verify Dilithium signature over ciphertext envelope FIRST
+            sig_preimage = (
+                kyber_ct.encrypted_payload +
+                kyber_ct.nonce +
+                kyber_ct.kem_ciphertext +
+                secure_payload.sender_id.encode("utf-8") +
+                str(secure_payload.round_number).encode("utf-8")
+            )
+            payload_hash = hashlib.sha3_256(sig_preimage).digest()
             sig = DilithiumSignature.from_dict(secure_payload.dilithium_signature)
             is_sig_valid = self.dilithium.verify(payload_hash, sig, sender_dilithium_pk)
             
             if not is_sig_valid:
                 return False, None, f"Dilithium signature verification failed for sender {secure_payload.sender_id}"
+
+            # 2. Decrypt payload using Kyber KEM secret key only after signature verification
+            decrypted_bytes = self.kyber.decrypt_payload(kyber_ct, server_kyber_sk)
 
             # 3. Deserialize weights
             weights = json.loads(decrypted_bytes.decode("utf-8"))
