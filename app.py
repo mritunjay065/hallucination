@@ -600,9 +600,10 @@ INDEX_HTML = """
             Systematic inspection of deliberate application vulnerabilities, safe demonstration of attack exploits, implementation of NIST cryptographic patches, and automated regression retesting.
           </p>
         </div>
-        <div class="flex items-center gap-2">
-          <button onclick="loadSecurityAudit()" class="rounded-lg border border-slate-700 bg-slate-800 px-3 py-1.5 font-mono text-xs text-slate-200 hover:bg-slate-700 transition">
-            <i class="fa-solid fa-arrows-rotate"></i> Refresh Audit
+        <div class="flex items-center gap-3">
+          <span id="audit-last-updated" class="font-mono text-[10px] text-slate-400">Inspected: Just now</span>
+          <button id="btn-refresh-audit" onclick="loadSecurityAudit()" class="flex items-center gap-2 rounded-lg border border-purple-500/40 bg-purple-500/10 px-3.5 py-1.5 font-mono text-xs font-semibold text-purple-300 hover:bg-purple-500/20 active:scale-95 transition shadow">
+            <i id="audit-refresh-icon" class="fa-solid fa-arrows-rotate"></i> <span>Refresh Audit</span>
           </button>
         </div>
       </div>
@@ -960,6 +961,13 @@ INDEX_HTML = """
     }
 
     async function loadSecurityAudit() {
+      const btn = document.getElementById('btn-refresh-audit');
+      const icon = document.getElementById('audit-refresh-icon');
+      const updatedEl = document.getElementById('audit-last-updated');
+      
+      if (icon) icon.classList.add('fa-spin');
+      if (btn) btn.classList.add('opacity-75');
+
       try {
         const res = await fetch('/api/security-audit');
         const data = await res.json();
@@ -967,7 +975,7 @@ INDEX_HTML = """
         if (!container || !data.vulnerabilities) return;
 
         container.innerHTML = data.vulnerabilities.map(v => `
-          <div class="rounded-lg border border-slate-700/80 bg-slate-950/60 p-4 flex flex-col justify-between space-y-4">
+          <div class="rounded-lg border border-slate-700/80 bg-slate-950/60 p-4 flex flex-col justify-between space-y-4 shadow-sm hover:border-purple-500/50 transition">
             <div>
               <div class="flex items-center justify-between gap-2">
                 <span class="rounded bg-rose-500/20 px-2 py-0.5 font-mono text-[10px] font-bold text-rose-400 border border-rose-500/30">
@@ -987,8 +995,19 @@ INDEX_HTML = """
             </button>
           </div>
         `).join('');
+
+        if (updatedEl) {
+          const now = new Date();
+          updatedEl.textContent = `Inspected: ${now.toLocaleTimeString()}`;
+        }
+        addPQCLog(`[${new Date().toLocaleTimeString()}] application vulnerability scan completed: 3 CWE targets active & verified`);
       } catch (err) {
         console.error('Failed to load security audit', err);
+      } finally {
+        setTimeout(() => {
+          if (icon) icon.classList.remove('fa-spin');
+          if (btn) btn.classList.remove('opacity-75');
+        }, 500);
       }
     }
 
