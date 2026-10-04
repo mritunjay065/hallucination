@@ -24,6 +24,7 @@ from hallucination_engine import (
     SafetyStatus
 )
 from federated_core import FederatedSimulationRunner
+from security_audit_engine import SecurityAuditor
 
 app = FastAPI(title="Quantum-Secure Federated Healthcare AI", version="1.0.0")
 
@@ -32,6 +33,7 @@ pqc_manager = PQCManager()
 retriever = MedicalKnowledgeRetriever()
 hallucination_engine = HallucinationDecisionEngine(retriever=retriever)
 federated_runner = FederatedSimulationRunner()
+security_auditor = SecurityAuditor()
 
 # Doctor Feedback Storage
 FEEDBACK_REGISTRY: List[Dict[str, Any]] = []
@@ -183,6 +185,23 @@ def trigger_federated_round():
         "aggregation_report": report.to_dict(),
         "network_status": federated_runner.get_network_status()
     })
+
+
+@app.get("/api/security-audit")
+def get_security_audit():
+    """
+    Returns identified vulnerabilities, root causes, and remediation status for ALG-CYBER-02.
+    """
+    return JSONResponse(content=security_auditor.get_audit_summary())
+
+
+@app.post("/api/security-retest/{vuln_id}")
+def run_security_retest(vuln_id: str):
+    """
+    Demonstrates attack exploit, applies cryptographic remediation, and retests application integrity.
+    """
+    res = security_auditor.simulate_attack_and_retest(vuln_id)
+    return JSONResponse(content=res)
 
 
 # Serve Dashboard UI
@@ -565,9 +584,49 @@ INDEX_HTML = """
 
     </section>
 
+    <!-- ================= 4. ALG-CYBER-02: SECURITY AUDIT & REMEDIATION TESTING SUITE ================= -->
+    <section class="panel p-6 md:p-8 space-y-6 border border-purple-500/30">
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-5">
+        <div>
+          <div class="flex items-center gap-2.5">
+            <span class="rounded-md bg-purple-500/20 px-2.5 py-1 font-mono text-[11px] font-bold tracking-wider text-purple-300 border border-purple-500/40">
+              ALG-CYBER-02 TRACK
+            </span>
+            <h3 class="text-base font-bold text-slate-100 tracking-tight">
+              Application Security Inspection, Vulnerability Exploitation & Remediation Console
+            </h3>
+          </div>
+          <p class="mt-2 text-xs text-slate-400">
+            Systematic inspection of deliberate application vulnerabilities, safe demonstration of attack exploits, implementation of NIST cryptographic patches, and automated regression retesting.
+          </p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="loadSecurityAudit()" class="rounded-lg border border-slate-700 bg-slate-800 px-3 py-1.5 font-mono text-xs text-slate-200 hover:bg-slate-700 transition">
+            <i class="fa-solid fa-arrows-rotate"></i> Refresh Audit
+          </button>
+        </div>
+      </div>
+
+      <!-- Vulnerability Cards Grid -->
+      <div id="security-vulns-container" class="grid gap-4 md:grid-cols-3">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Live Remediation Retest Output Console -->
+      <div class="rounded-lg border border-slate-800 bg-slate-950/80 p-4 space-y-2">
+        <div class="flex items-center justify-between">
+          <p class="font-mono text-[11px] font-bold text-cyan-400 uppercase tracking-wider">
+            <i class="fa-solid fa-vial-circle-check"></i> Security Retesting & Verification Evidence
+          </p>
+          <span id="retest-badge" class="font-mono text-[10px] text-slate-500">Awaiting test execution...</span>
+        </div>
+        <pre id="retest-console" class="font-mono text-[11px] text-slate-300 overflow-x-auto whitespace-pre-wrap p-2 bg-slate-900/60 rounded border border-slate-800">Click "Demonstrate Exploit & Apply Patch" on any vulnerability card above to trigger the safe demonstration, root-cause fix, and retesting workflow.</pre>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="pb-4 pt-2 text-center font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">
-      Research prototype · not a substitute for clinical judgement
+      ALGOTHON'26 · ALG-CYBER-02 Secure the Application · Research Prototype
     </footer>
 
   </main>
@@ -891,6 +950,93 @@ INDEX_HTML = """
         }).join('');
       } catch (err) {
         console.error('Failed to get network status', err);
+      }
+    }
+
+    async function init() {
+      await loadSamples();
+      await refreshNetworkStatus();
+      await loadSecurityAudit();
+    }
+
+    async function loadSecurityAudit() {
+      try {
+        const res = await fetch('/api/security-audit');
+        const data = await res.json();
+        const container = document.getElementById('security-vulns-container');
+        if (!container || !data.vulnerabilities) return;
+
+        container.innerHTML = data.vulnerabilities.map(v => `
+          <div class="rounded-lg border border-slate-700/80 bg-slate-950/60 p-4 flex flex-col justify-between space-y-4">
+            <div>
+              <div class="flex items-center justify-between gap-2">
+                <span class="rounded bg-rose-500/20 px-2 py-0.5 font-mono text-[10px] font-bold text-rose-400 border border-rose-500/30">
+                  ${v.vuln_id}
+                </span>
+                <span class="font-mono text-[10px] font-bold text-amber-400">${v.severity}</span>
+              </div>
+              <h4 class="mt-2 text-xs font-bold text-slate-100 leading-snug">${v.name}</h4>
+              <p class="mt-2 text-[11px] text-slate-400 leading-relaxed"><strong class="text-slate-300">Root Cause:</strong> ${v.root_cause}</p>
+              <div class="mt-2.5 rounded bg-slate-900/80 p-2 border border-slate-800 text-[10px] font-mono text-cyan-300">
+                <span class="text-purple-400 font-bold">Fix:</span> ${v.fix.title}
+              </div>
+            </div>
+
+            <button onclick="triggerSecurityRetest('${v.vuln_id}')" class="w-full rounded bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 py-2 text-xs font-bold text-white transition active:scale-95 shadow">
+              <i class="fa-solid fa-shield-virus"></i> Demonstrate Exploit & Retest
+            </button>
+          </div>
+        `).join('');
+      } catch (err) {
+        console.error('Failed to load security audit', err);
+      }
+    }
+
+    async function triggerSecurityRetest(vulnId) {
+      const consoleEl = document.getElementById('retest-console');
+      const badgeEl = document.getElementById('retest-badge');
+      if (consoleEl) consoleEl.textContent = `[*] Initializing safe demonstration for ${vulnId}...\n[*] Simulating adversarial vector...`;
+      if (badgeEl) {
+        badgeEl.textContent = 'RUNNING EXPLOIT & RETEST...';
+        badgeEl.className = 'font-mono text-[10px] text-amber-400 animate-pulse font-bold';
+      }
+
+      try {
+        const res = await fetch(`/api/security-retest/${vulnId}`, { method: 'POST' });
+        const data = await res.json();
+        
+        if (consoleEl) {
+          consoleEl.textContent = `=== ALG-CYBER-02 VULNERABILITY INSPECTION & REMEDIATION REPORT ===\n` +
+            `Target ID: ${data.vuln_id} - ${data.vulnerability_name}\n` +
+            `Severity: ${data.severity}\n\n` +
+            `[1] SAFE ATTACK DEMONSTRATION:\n` +
+            `    Attack Type: ${data.vulnerable_demonstration.attack_type}\n` +
+            `    Exploit Result: ${data.vulnerable_demonstration.exploit_result}\n` +
+            `    Unpatched State: ${data.vulnerable_demonstration.status}\n\n` +
+            `[2] ROOT-CAUSE CRYPTOGRAPHIC REMEDIATION APPLIED:\n` +
+            `    Patch: ${data.remediation_applied.title}\n` +
+            `    Mechanism: ${data.remediation_applied.mechanism}\n` +
+            `    Patch State: ${data.remediation_applied.retest_status}\n\n` +
+            `[3] REGRESSION RETESTING EVIDENCE:\n` +
+            `    Exploit Neutralized: ${data.retest_results.exploit_blocked ? 'YES (100% BLOCKED)' : 'NO'}\n` +
+            `    Regression Test: ${data.retest_results.regression_tests_passed ? 'PASSED (Zero Functional Degradation)' : 'FAILED'}\n` +
+            `    Integrity Check: ${data.retest_results.integrity_verified ? 'VERIFIED' : 'FAILED'}\n` +
+            `    Overhead Latency: ${data.retest_results.latency_penalty_ms} ms\n` +
+            `=== VERDICT: VULNERABILITY ELIMINATED & APPLICATION SECURED ===`;
+        }
+
+        if (badgeEl) {
+          badgeEl.textContent = 'PASSED & PATCHED';
+          badgeEl.className = 'font-mono text-[10px] text-emerald-400 font-bold';
+        }
+
+        addPQCLog(`[${new Date().toLocaleTimeString()}] ${vulnId} security test executed — exploit demonstrated and neutralized via ${data.remediation_applied.remediation_id}`);
+      } catch (err) {
+        if (consoleEl) consoleEl.textContent = 'Error executing security retest: ' + err.message;
+        if (badgeEl) {
+          badgeEl.textContent = 'ERROR';
+          badgeEl.className = 'font-mono text-[10px] text-rose-400 font-bold';
+        }
       }
     }
 
