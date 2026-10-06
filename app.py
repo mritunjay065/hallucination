@@ -635,9 +635,51 @@ INDEX_HTML = """
         </div>
       </div>
 
-      <!-- Vulnerability Cards Grid -->
-      <div id="security-vulns-container" class="grid gap-4 md:grid-cols-3">
-        <!-- Rendered dynamically -->
+      <!-- Live Custom Payload Injection Playground -->
+      <div class="rounded-lg border border-purple-500/40 bg-slate-950/90 p-5 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-3">
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-purple-300 flex items-center gap-2">
+              <i class="fa-solid fa-flask-vial"></i> Live Dynamic Exploit & Defense Sandbox (Type Any Random Input)
+            </h4>
+            <p class="text-[11px] text-slate-400 mt-1">
+              Test ANY custom string, SQL vector, or prompt. Execute in raw Unpatched Mode (Red Team) vs Remediated Mode (Blue Team).
+            </p>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-mono text-slate-400">Mode:</span>
+            <button id="btn-toggle-sandbox-mode" onclick="toggleSandboxMode()" class="rounded px-3 py-1 font-mono text-xs font-bold border border-rose-500/50 bg-rose-500/20 text-rose-300 hover:bg-rose-500/30 transition">
+              <i class="fa-solid fa-skull"></i> RED TEAM (Unpatched)
+            </button>
+          </div>
+        </div>
+
+        <div class="grid gap-3 sm:grid-cols-[1fr_auto]">
+          <input 
+            type="text" 
+            id="sandbox-custom-payload" 
+            value="' OR '1'='1" 
+            placeholder="Type ANY random payload (e.g. ' UNION SELECT 1,2,3... or PAT-101 or random text)..."
+            class="w-full rounded-lg border border-slate-700 bg-slate-900 px-3.5 py-2.5 font-mono text-xs text-slate-100 focus:border-purple-500 focus:outline-none"
+          />
+          <button 
+            onclick="executeLiveSandboxTest()" 
+            class="rounded-lg bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 px-5 py-2.5 text-xs font-bold text-white shadow transition active:scale-95 flex items-center gap-2 justify-center"
+          >
+            <i class="fa-solid fa-play"></i> Execute Live on Backend
+          </button>
+        </div>
+
+        <div class="flex flex-wrap gap-2 text-[10px] font-mono text-slate-400">
+          <span>Quick presets:</span>
+          <button onclick="setSandboxPayload(\"' OR '1'='1\")" class="hover:text-cyan-300 text-slate-400 underline">' OR '1'='1</button>
+          <span>·</span>
+          <button onclick="setSandboxPayload(\"PAT-101' --\")" class="hover:text-cyan-300 text-slate-400 underline">PAT-101' --</button>
+          <span>·</span>
+          <button onclick="setSandboxPayload(\"PAT-102\")" class="hover:text-cyan-300 text-slate-400 underline">PAT-102 (Safe ID)</button>
+          <span>·</span>
+          <button onclick="setSandboxPayload(\"' UNION SELECT 999,'Hacked Patient','Data Breach','None','Top Secret Extracted','Attacker') --\")" class="hover:text-cyan-300 text-slate-400 underline">UNION SELECT injection</button>
+        </div>
       </div>
 
       <!-- Live Remediation Retest Output Console -->
@@ -648,7 +690,7 @@ INDEX_HTML = """
           </p>
           <span id="retest-badge" class="font-mono text-[10px] text-slate-500">Awaiting test execution...</span>
         </div>
-        <pre id="retest-console" class="font-mono text-[11px] text-slate-300 overflow-x-auto whitespace-pre-wrap p-2 bg-slate-900/60 rounded border border-slate-800">Click "Demonstrate Exploit & Apply Patch" on any vulnerability card above to trigger the safe demonstration, root-cause fix, and retesting workflow.</pre>
+        <pre id="retest-console" class="font-mono text-[11px] text-slate-300 overflow-x-auto whitespace-pre-wrap p-2 bg-slate-900/60 rounded border border-slate-800">Click "Demonstrate Exploit & Apply Patch" on any vulnerability card above, or enter ANY custom input into the Live Sandbox to test backend execution in real time.</pre>
       </div>
     </section>
 
@@ -1085,6 +1127,79 @@ INDEX_HTML = """
           badgeEl.textContent = 'ERROR';
           badgeEl.className = 'font-mono text-[10px] text-rose-400 font-bold';
         }
+      }
+    }
+
+    let sandboxRemediationActive = false;
+
+    function toggleSandboxMode() {
+      sandboxRemediationActive = !sandboxRemediationActive;
+      const btn = document.getElementById('btn-toggle-sandbox-mode');
+      if (sandboxRemediationActive) {
+        btn.innerHTML = '<i class="fa-solid fa-shield-halved"></i> BLUE TEAM (Patched)';
+        btn.className = 'rounded px-3 py-1 font-mono text-xs font-bold border border-emerald-500/50 bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500/30 transition';
+      } else {
+        btn.innerHTML = '<i class="fa-solid fa-skull"></i> RED TEAM (Unpatched)';
+        btn.className = 'rounded px-3 py-1 font-mono text-xs font-bold border border-rose-500/50 bg-rose-500/20 text-rose-300 hover:bg-rose-500/30 transition';
+      }
+    }
+
+    function setSandboxPayload(text) {
+      const input = document.getElementById('sandbox-custom-payload');
+      if (input) input.value = text;
+    }
+
+    async function executeLiveSandboxTest() {
+      const input = document.getElementById('sandbox-custom-payload');
+      const consoleEl = document.getElementById('retest-console');
+      const badgeEl = document.getElementById('retest-badge');
+      const payload = input ? input.value : '';
+
+      if (!payload.trim()) {
+        alert('Please enter a test payload.');
+        return;
+      }
+
+      if (consoleEl) consoleEl.textContent = `[*] Sending dynamic payload to live backend: "${payload}"\n[*] Backend execution mode: ${sandboxRemediationActive ? 'BLUE TEAM (Remediated)' : 'RED TEAM (Vulnerable)'}...`;
+      if (badgeEl) {
+        badgeEl.textContent = 'EXECUTING LIVE ON SQLITE...';
+        badgeEl.className = 'font-mono text-[10px] text-cyan-400 font-bold animate-pulse';
+      }
+
+      try {
+        const res = await fetch('/api/cyber/live-sqli-test', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            payload: payload,
+            remediation_active: sandboxRemediationActive
+          })
+        });
+        const data = await res.json();
+
+        if (consoleEl) {
+          consoleEl.textContent = `=== DYNAMIC LIVE BACKEND SQL EXECUTION REPORT ===\n` +
+            `Target Database: SQLite (cyber_appsec.db - patient_records table)\n` +
+            `Input Payload: ${payload}\n` +
+            `Mode Selected: ${data.mode}\n\n` +
+            `[EXECUTION DETAILS]:\n` +
+            `    Executed SQL Query: ${data.executed_query || 'BLOCKED BEFORE EXECUTION'}\n` +
+            `    Execution Latency: ${data.latency_ms || 0.1} ms\n` +
+            `    Rows Returned: ${data.rows_returned || 0}\n` +
+            `    Status: ${data.status}\n` +
+            (data.blocked_reason ? `    Defensive Block Reason: ${data.blocked_reason}\n` : '') +
+            `\n[DATABASE OUTPUT SNIPPET]:\n` +
+            JSON.stringify(data.data || data.error || [], null, 2);
+        }
+
+        if (badgeEl) {
+          badgeEl.textContent = data.status.includes('BLOCKED') ? 'EXPLOIT BLOCKED (SAFE)' : 'QUERY EXECUTED';
+          badgeEl.className = data.status.includes('BLOCKED') ? 'font-mono text-[10px] text-emerald-400 font-bold' : 'font-mono text-[10px] text-rose-400 font-bold';
+        }
+
+        addPQCLog(`[${new Date().toLocaleTimeString()}] custom query executed: "${payload.substring(0, 25)}..." -> ${data.status}`);
+      } catch (err) {
+        if (consoleEl) consoleEl.textContent = 'Backend execution error: ' + err.message;
       }
     }
 
